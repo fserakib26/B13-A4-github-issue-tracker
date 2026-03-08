@@ -49,7 +49,7 @@
 
     <main class="w-9/12 mx-auto">
         <div class="mx-auto mt-10 bg-slate-100 p-5 rounded-md shadow-md">
-            <button class="btn btn-primary">All</button>
+            <button onclick="allIssues()" class="btn btn-primary">All</button>
             <button class="btn">Open</button>
             <button class="btn">Closed</button>
         </div>
@@ -71,29 +71,43 @@
             </div>
         </div>
 
-        <div class="w-3/12">
-            <div>
-                <div class="flex items-center justify-between">
-                    <div>
-                        <span class="status"><div class="badge badge-success"></div></span>
-                    </div>
+        <div id="all-issues-container" class="flex flex-wrap gap-5">
+           <!-- Issues push here form JavaScript dinamically -->
+        </div>
 
+        <div id="" class="grid grid-cols-4">
+            <div class="mt-6 border-t-6 border-green-600 p-5 rounded-xl ">                
+                <div class="space-y-5">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <img src="/assets/Open-Status.png" alt="">
+                        </div>
+
+                        <div>
+                            <span class="bg-red-100 rounded-full text-red-500 px-3 py-1">HIGH</span>
+                        </div>
+                    </div>
                     <div>
-                        <span class="Priority"><div class="badge badge-error">High</div></span>
+                        <h2 class="text-xl font-bold mb-4">Fix navigation menu on mobile devices</h2>
+                        <p>The navigation menu doesn't collapse properly on mobile devices...</p>
+                    </div>
+                    <div>
+                        <div>
+                            <span class="bg-red-100 rounded-full border border-red-300 text-red-500 px-3 py-1"><i class="fa-solid fa-bug"></i>  BUG</span>
+                            <span class="bg-yellow-100 rounded-full border border-yellow-300 text-yellow-500 px-3 py-1">HELP WANTED</span>
+                        </div>                        
                     </div>
                 </div>
+
+                <!-- <div class="divider"></div> -->
+
                 <div>
-
+                    
                 </div>
-                <div></div>
-            </div>
-
-            <div>
-
             </div>
         </div>
     </main>
     
-
+    <script src="./script/script.js"></script>
 </body>
 </html>
