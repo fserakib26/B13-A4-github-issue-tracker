@@ -94,13 +94,33 @@ allIssues();
 const openIssues = () =>{
     const openData = allIssuesData.filter(issue => issue.status === "open");
     displayAllIssues(openData);
-
+    activeButton("open-btn");
 }
 
 // Closed Status Filtering for Closed Button
 const closedIssues = () =>{
     const closedData = allIssuesData.filter(issue => issue.status === "closed");
     displayAllIssues(closedData);
+    activeButton("closed-btn");
+}
+
+// Active Button Select
+function activeButton(id){
+    const allBtn = document.getElementById("all-btn")
+    allBtn.classList.remove("active");
+
+    const openBtn = document.getElementById("open-btn")
+    openBtn.classList.remove("active");
+
+    const closedBtn = document.getElementById("closed-btn")
+    closedBtn.classList.remove("active");
+
+    const activeBtn = document.getElementById(id)
+    activeBtn.classList.add("active");
 
 }
+
+
+
+
 
