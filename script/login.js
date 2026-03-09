@@ -11,7 +11,7 @@ document.getElementById("loginbtn").addEventListener("click", function () {
     // console.log(userPassword)
 
     if(userName === "admin" && userPassword === "admin123"){
-        window.location.assign("home.html")
+        window.location.href = "home.html";
     } else {
         alert('Login Failed! Type the Correct Username & Password')
         return;
