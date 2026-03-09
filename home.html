@@ -41,7 +41,7 @@
                     <path d="m21 21-4.3-4.3"></path>
                     </g>
                 </svg>
-                <input type="search" required placeholder="Search issues..." />
+                <input type="search" required placeholder="Search issues..." id="search-field" onkeyup="search()" />
             </label>
             <button class="btn btn-primary">+New Issues</button>
         </div>
@@ -119,6 +119,11 @@
         <div id="open-issues-container">
 
         </div>
+
+        <div id="spinner" class="flex justify-center items-center hidden">
+            <span class="loading loading-spinner text-primary"></span>
+        </div>
+
     </main>
     
     <script src="./script/script.js"></script>
