@@ -1,10 +1,21 @@
+// Global Variable Decleration
+let allIssuesData = [];
+
 const allIssues = () =>{
     const url = "https://phi-lab-server.vercel.app/api/v1/lab/issues";
     fetch(url)
         .then((res)=>res.json())
-        .then((data)=>displayAllIssues(data.data));    
+        .then((data)=>{
+            // To save Data all data in global variable to use in future
+            allIssuesData = data.data; 
+
+            // Display Function called to show all data  
+            displayAllIssues(allIssuesData); 
+            });    
 };
 
+
+// All Issue Display Function
 const displayAllIssues=(issues)=>{
     // console.log(issues); 
 
@@ -15,7 +26,7 @@ const displayAllIssues=(issues)=>{
     for(let issue of issues){
         // Issue Counter
         const issueCount = document.getElementById("issue-count");
-        issueCount.innerHTML = issue.id + " Issues";
+        issueCount.innerHTML = issues.length + " Issues";
 
         let innerLabels = "";
         for (let label of issue.labels){
@@ -61,24 +72,35 @@ const displayAllIssues=(issues)=>{
 
                 <div class="divider"></div>
 
-                <div class="pb-5 pl-5 pr-5 rounded-xl text-slate-500">
+                <div class="pb-5 pl-5 pr-5 rounded-xl text-slate-500 flex flex-col justify-center">
                     <div>
                         <span class="font-bold">${issue.author}</span>                        
                     </div>
                     <div>
-                        <span>${issue.createdAt}createdAt</span>
+                        <span>${issue.createdAt}</span>
                     </div>
                 </div>
             </div>
         `;
+
         allIssuesContainer.appendChild(issueCard);
     }
     
 };
 
-
-
-
-
 allIssues();
+
+// Open Status Filtering for Open Button
+const openIssues = () =>{
+    const openData = allIssuesData.filter(issue => issue.status === "open");
+    displayAllIssues(openData);
+
+}
+
+// Closed Status Filtering for Closed Button
+const closedIssues = () =>{
+    const closedData = allIssuesData.filter(issue => issue.status === "closed");
+    displayAllIssues(closedData);
+
+}
 

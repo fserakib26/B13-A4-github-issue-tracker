@@ -49,9 +49,9 @@
 
     <main class="w-9/12 mx-auto">
         <div class="mx-auto mt-10 bg-slate-100 p-5 rounded-md shadow-md">
-            <button onclick="allIssues()" class="btn btn-primary">All</button>
-            <button onclick="allIssues()" class="btn">Open</button>
-            <button onclick="allIssues()" class="btn">Closed</button>
+            <button onclick="allIssues()" class="btn btn-outline btn-primary">All</button>
+            <button onclick="openIssues()" class="btn btn-outline btn-primary">Open</button>
+            <button onclick="closedIssues()" class="btn btn-outline btn-primary">Closed</button>
         </div>
 
         <div class="mt-4 p-5 bg-slate-100 rounded-md shadow-md flex justify-between items-center">
@@ -114,6 +114,10 @@
 
         <div id="all-issues-container" class="grid grid-cols-4 gap-4">
             <!-- Issue Cards Show Here Daynamically from JavaScrpit file from API -->
+        </div>
+
+        <div id="open-issues-container">
+
         </div>
     </main>
     
