@@ -15,6 +15,8 @@ const allIssues = () =>{
             // Display Function called to show all data  
             displayAllIssues(allIssuesData); 
             activeButton("all-btn");
+
+            manageSpinner(false);
             
             });           
 };
@@ -167,7 +169,7 @@ const displayAllIssues=(issues)=>{
         `;
 
         allIssuesContainer.appendChild(issueCard);
-        manageSpinner(false);
+        
     }
     
 };
@@ -207,8 +209,7 @@ function activeButton(id){
 
     const activeBtn = document.getElementById(id)
     activeBtn.classList.add("active");
-
-}
+};
 
 // For Search
 
@@ -223,7 +224,9 @@ const search = () => {
         issue.labels.join(" ").toLowerCase().includes(searchText)
     );
     displayAllIssues(findSearch);
+    
 };
+
 
 // Spinner Function
 const manageSpinner = (status) => {
